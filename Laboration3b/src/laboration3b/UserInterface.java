@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboration3b;
 
 /**
@@ -11,4 +6,16 @@ package laboration3b;
  */
 public class UserInterface {
     
+    public UserInterface(){
+        
+    }
+    public void menu(){
+        
+    }
+    public void addBook(){
+        
+    }
+    public void getBooksByTitle(String title){
+        
+    }
 }
