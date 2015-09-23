@@ -5,6 +5,7 @@
  */
 package laboration3b;
 import java.util.ArrayList;
+import java.util.Collections;
 /**
  *
  * @author Chrille
@@ -34,11 +35,27 @@ public class CollectionOfBooks {
     
     public ArrayList<Book> getBooksByISBN(String isbn){
         ArrayList<Book> temp = new ArrayList<>();
+        for(int i = 0; i < books.size(); i++){
+            if(books.get(i).getISBN().equals(isbn)){
+                temp.add(books.get(i));
+            }
+        }
+        Collections.sort(temp);
         return temp;
     }
     
     public ArrayList<Book> getBooksByTitle(String title){
         ArrayList<Book> temp = new ArrayList<>();
+        for(int i = 0; i < books.size(); i++){
+            /*if(books.get(i).getTitle().equals(title)){
+                temp.add(books.get(i));
+            }*/
+            if(books.get(i).getTitle().contains(title)){
+                temp.add(books.get(i));
+            }
+        }
+        
+        Collections.sort(temp);
         return temp;
     }
     
@@ -49,17 +66,16 @@ public class CollectionOfBooks {
     }
     
     public Book getBook(int index){
-        Book b = books.get(index);
-        return b;
+        return (Book)books.get(index);
     }
-    public String getBooks(){
+    public String getBooks(ArrayList<Book> temp){
         String info = new String();
-        if(books.size()<1){
+        if(temp.size()<1){
             return null;
         }else {
-            for(int i = 0; i < books.size(); i++){
-            info += "[" + (i+1) + "] ISBN: " + books.get(i).getISBN() + " Title: " 
-                    + books.get(i).getTitle() + " Author: FIXA"  + " Edition: " + books.get(i).getEdition() + " Price: " + books.get(i).getPrice() + "kr";
+            for(int i = 0; i < temp.size(); i++){
+            info += "[" + (i+1) + "] ISBN: " + temp.get(i).getISBN() + " Title: " 
+                    + temp.get(i).getTitle() + " Author: FIXA"  + " Edition: " + temp.get(i).getEdition() + " Price: " + temp.get(i).getPrice() + "kr";
             info += "\n";
             }
             return info;
@@ -72,7 +88,16 @@ public class CollectionOfBooks {
     }    
     @Override
     public String toString(){
-        String info = "hello";
-        return info;
+        String info = new String();
+        if(books.size()<1){
+            return null;
+        }else {
+            for(int i = 0; i < books.size(); i++){
+            info += "[" + (i+1) + "] ISBN: " + books.get(i).getISBN() + " Title: " 
+                    + books.get(i).getTitle() + " Author: FIXA"  + " Edition: " + books.get(i).getEdition() + " Price: " + books.get(i).getPrice() + "kr";
+            info += "\n";
+            }
+            return info;
+        }
     }
 }

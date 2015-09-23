@@ -17,6 +17,7 @@ public class Book implements Comparable<Book>{
     private int edition;
     private double price;
     private ArrayList<Author> authors;
+    private String sortingBy;
     
     public Book(String isbn, String title, int edition, double price, String name ){
         authors = new ArrayList<>();
@@ -25,10 +26,13 @@ public class Book implements Comparable<Book>{
         this.edition = edition;
         this.price = price;
         addAuthor(name);
+        sortingBy = "title";
         
         
     }
-    
+    public void setSortingBy(String sortingBy){
+        this.sortingBy = sortingBy;
+    }
     public void setISBN(String isbn){
         this.isbn = isbn;
     }
@@ -61,9 +65,9 @@ public class Book implements Comparable<Book>{
         return price;
     }
     @Override
-    public int compareTo(Book o) {
-        
-        return 0; // FIXA METOD!!
+    public int compareTo(Book b) {
+        int res = this.title.compareTo(b.getTitle());
+        return res; // FIXA METOD!!
     }
     
     public void addAuthor(String author){

@@ -18,7 +18,10 @@ public class UserInterface {
         books.addBook(b);
     }
     public void getBooksByTitle(String title){
-        books.getBooksByTitle(title);
+        System.out.println(books.getBooks(books.getBooksByTitle(title)));
+    }
+    public void getBooksByISBN(String isbn){
+        System.out.println(books.getBooks(books.getBooksByISBN(isbn)));
     }
     public void removeBook(int index){
         if (!books.removeBook(index)){
@@ -27,7 +30,7 @@ public class UserInterface {
         }
     }
     public void getBooks(){
-        String temp = books.getBooks();
+        String temp = books.toString();
         if(temp != null){
             System.out.println(temp);
         }else System.out.println("Empty...");
@@ -78,7 +81,9 @@ public class UserInterface {
     
     // Definierar ett annat "uppdrag"
     private void doB() {
-    	System.out.println("You choose B");
+        Scanner scan = new Scanner(System.in);
+    	System.out.print("Please enter the title: ");
+        getBooksByTitle(scan.nextLine());
     }
     
     private void doC(){
@@ -87,7 +92,9 @@ public class UserInterface {
         
     }
     private void doD(){
-        
+        Scanner scan = new Scanner(System.in);
+    	System.out.print("Please enter the ISBN: ");
+        getBooksByISBN(scan.nextLine());
     }
     private void doE(){
         Scanner scan = new Scanner(System.in);
@@ -97,8 +104,6 @@ public class UserInterface {
             System.out.print("by typing the nr: ");
             removeBook((scan.nextInt())-1);
         }else System.out.println("Empty list...");
-        
-        
     }
     
     private void printMenu() {
