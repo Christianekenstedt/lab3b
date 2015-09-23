@@ -32,29 +32,45 @@ public class UserInterface {
     		choice = answer.charAt(0); // Fˆrsta tecknet i svaret
     		
     		switch(choice) {
-    			case 'A':	doThis(); break;
-    			case 'B':	doThat(); break;
-    			case 'X':	System.out.println("Bye, bye!"); break;
+    			case 'A':	doA(); break;
+    			case 'B':	doB(); break;
+                        case 'C':       doC(); break;
+                        case 'D':       doD(); break;
+                        case 'E':       doE(); break;
+    			case 'X':	System.out.println("Bye, bye!"); break; // Here we do need to write to the file.
     			default: 	System.out.println("Unknown command");
     		}
     		
     	} while(choice != 'X');
     }
     // Definierar ett "uppdrag"
-    private void doThis() {
+    private void doA() {
     	System.out.println("You choose A");
         
     }
     
     // Definierar ett annat "uppdrag"
-    private void doThat() {
+    private void doB() {
     	System.out.println("You choose B");
+    }
+    
+    private void doC(){
+        
+    }
+    private void doD(){
+        
+    }
+    private void doE(){
+        
     }
     
     private void printMenu() {
     	System.out.println("---Menu---");
     	System.out.println("A Add a book");
     	System.out.println("B Get books by title");
+        System.out.println("D Get books by ISBN");
+        System.out.println("C Print all books");
+        System.out.println("E Remove a book");
     	System.out.println("X Exit");
     	System.out.println("----------");
     }
