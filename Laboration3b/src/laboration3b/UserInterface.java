@@ -20,6 +20,12 @@ public class UserInterface {
     public void getBooksByTitle(String title){
         books.getBooksByTitle(title);
     }
+    public void removeBook(int index){
+        books.removeBook(index); // We have to check if the index exists!
+    }
+    public void getBooks(){
+        System.out.println(books.getBooks());
+    }
     
     private void run(){
         Scanner scan = new Scanner(System.in);
@@ -69,12 +75,19 @@ public class UserInterface {
     }
     
     private void doC(){
+        System.out.println("Printing all books...");
+        getBooks();
         
     }
     private void doD(){
         
     }
     private void doE(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Remove one of the following books: ");
+        getBooks();
+        System.out.print("by typing the nr: ");
+        removeBook((scan.nextInt())-1);
         
     }
     

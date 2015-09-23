@@ -39,6 +39,22 @@ public class Book implements Comparable<Book>{
     public void setPrice(Double price){
         this.price = price;
     }
+    
+    public String getISBN(){
+        return isbn;
+    }
+    
+    public String getTitle(){
+        return title;
+    }
+    
+    public int getEdition(){
+        return edition;
+    }
+    
+    public double getPrice(){
+        return price;
+    }
     @Override
     public int compareTo(Book o) {
         

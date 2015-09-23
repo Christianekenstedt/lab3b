@@ -24,6 +24,9 @@ public class CollectionOfBooks {
     public void removeBook(Book b){
         books.remove(b);
     }
+    public void removeBook(int index){
+        books.remove(index);
+    }
     
     public ArrayList<Book> getBooksByISBN(String isbn){
         ArrayList<Book> temp = new ArrayList<>();
@@ -35,10 +38,23 @@ public class CollectionOfBooks {
         return temp;
     }
     
-    public String getBooks(){
-        String info = "hello";
-        return info;
+    public Book getBook(int index){
+        Book b = books.get(index);
+        return b;
     }
+    public String getBooks(){
+        String info = new String();
+        if(books.size()>0){
+            return null;
+        }else {
+            for(int i = 0; i < books.size(); i++){
+            info += "[" + (i+1) + "] ISBN: " + books.get(i).getISBN() + " Title: " + books.get(i).getTitle() + " Edition: " + books.get(i).getEdition() + " Price: " + books.get(i).getPrice() + "kr";
+            info += "\n";
+            }
+            return info;
+        }
+    }
+        
     @Override
     public String toString(){
         String info = "hello";
