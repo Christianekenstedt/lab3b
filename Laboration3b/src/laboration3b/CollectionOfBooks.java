@@ -19,7 +19,7 @@ public class CollectionOfBooks {
     }
     
     public void addBook(Book b){
-        
+        books.add(b);
     }
     public void removeBook(Book b){
         books.remove(b);

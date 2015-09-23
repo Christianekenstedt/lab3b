@@ -17,8 +17,27 @@ public class Book implements Comparable<Book>{
     private int edition;
     private double price;
     
-    public Book(){
-
+    public Book(String isbn, String title, int edition, double price ){
+        this.isbn = isbn;
+        this.title = title;
+        this.edition = edition;
+        this.price = price;
+    }
+    
+    public void setISBN(String isbn){
+        this.isbn = isbn;
+    }
+    
+    public void setTitleN(String title){
+        this.title = title;
+    }
+    
+    public void setEdition(int edition){
+        this.edition = edition;
+    }
+    
+    public void setPrice(Double price){
+        this.price = price;
     }
     @Override
     public int compareTo(Book o) {

@@ -46,8 +46,21 @@ public class UserInterface {
     }
     // Definierar ett "uppdrag"
     private void doA() {
-    	System.out.println("You choose A");
-        
+        Scanner scan = new Scanner(System.in);
+        String isbn, title,edition,price;
+
+        Book temp;
+    	System.out.println("Please add the following information: ");
+        System.out.println("Add ISBN: ");
+        isbn = scan.nextLine();
+        System.out.println("Add title: ");
+        title = scan.nextLine();
+        System.out.println("Add edition: ");
+        edition = scan.nextLine();
+        System.out.println("Add price: ");
+        price = scan.nextLine();
+        temp = new Book(isbn,title,Integer.parseInt(edition),Double.parseDouble(price));
+        addBook(temp);
     }
     
     // Definierar ett annat "uppdrag"
