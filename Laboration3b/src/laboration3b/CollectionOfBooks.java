@@ -13,7 +13,9 @@ public class CollectionOfBooks {
     private ArrayList<Book> books;
     
     public CollectionOfBooks(){
+        //read
         books = new ArrayList<>();
+        
     }
     
     public void addBook(Book b){

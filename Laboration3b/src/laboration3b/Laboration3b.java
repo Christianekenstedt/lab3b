@@ -44,6 +44,8 @@ public class Laboration3b {
                     edition = tokenizer.nextToken();
                     price = Integer.parseInt(tokenizer.nextToken());
                     
+                    
+                    
                     System.out.println(isbn + "\t" + title + "\t" + edition + "\t" + price + " kr");
                 } catch (NumberFormatException ne) {
                     System.out.println("Input mismatch. Skipping this line.");
