@@ -5,10 +5,30 @@
  */
 package laboration3b;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Chrille
  */
-public class Book {
+public class Book implements Comparable<Book>{
+    private String isbn;
+    private String title;
+    private int edition;
+    private double price; 
+    @Override
+    public int compareTo(Book o) {
+        
+        return 0; // FIXA METOD!!
+    }
+    
+    public void addAuthor(String author){
+        
+    }
+    
+    public ArrayList<Author> getAuthors(){
+        ArrayList<Author> authors = new ArrayList();
+        return authors;
+    }
     
 }

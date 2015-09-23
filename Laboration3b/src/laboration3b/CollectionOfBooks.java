@@ -4,11 +4,24 @@
  * and open the template in the editor.
  */
 package laboration3b;
-
+import java.util.ArrayList;
 /**
  *
  * @author Chrille
  */
 public class CollectionOfBooks {
+    private ArrayList<Book> books;
     
+    public CollectionOfBooks(){
+        books = new ArrayList<>();
+    }
+    
+    public void addBook(Book b){
+        
+    }
+    
+    public ArrayList<Book> getBooksByTitle(String title){
+        ArrayList<Book> temp = new ArrayList<>();
+        return temp;
+    }
 }
