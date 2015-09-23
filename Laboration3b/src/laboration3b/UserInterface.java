@@ -5,18 +5,19 @@ import java.util.Scanner;
  * @author Chrille
  */
 public class UserInterface {
-    
+    private CollectionOfBooks books;
     public UserInterface(){
         menu();
     }
     public void menu(){
+        books = new CollectionOfBooks();
         run();
     }
-    public void addBook(){
-        
+    public void addBook(Book b){
+        books.addBook(b);
     }
     public void getBooksByTitle(String title){
-        
+        books.getBooksByTitle(title);
     }
     
     private void run(){
@@ -42,6 +43,7 @@ public class UserInterface {
     // Definierar ett "uppdrag"
     private void doThis() {
     	System.out.println("You choose A");
+        
     }
     
     // Definierar ett annat "uppdrag"
@@ -51,8 +53,8 @@ public class UserInterface {
     
     private void printMenu() {
     	System.out.println("---Menu---");
-    	System.out.println("A Do This");
-    	System.out.println("B Do That");
+    	System.out.println("A Add a book");
+    	System.out.println("B Get books by title");
     	System.out.println("X Exit");
     	System.out.println("----------");
     }

@@ -10,5 +10,9 @@ package laboration3b;
  * @author Chrille
  */
 public class Author {
-    //hej
+    String author;//hej
+    
+    public Author(){
+        
+    }
 }
