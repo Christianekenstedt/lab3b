@@ -21,10 +21,16 @@ public class UserInterface {
         books.getBooksByTitle(title);
     }
     public void removeBook(int index){
-        books.removeBook(index); // We have to check if the index exists!
+        if (!books.removeBook(index)){
+            // We have to check if the index exists!
+            System.out.println("Can't find book!");
+        }
     }
     public void getBooks(){
-        System.out.println(books.getBooks());
+        String temp = books.getBooks();
+        if(temp != null){
+            System.out.println(temp);
+        }else System.out.println("Empty...");
     }
     
     private void run(){
@@ -36,7 +42,8 @@ public class UserInterface {
     		printMenu();
     		answer = scan.nextLine();
     		answer = answer.toUpperCase();
-    		choice = answer.charAt(0); // Fˆrsta tecknet i svaret
+                choice = answer.charAt(0); // Fˆrsta tecknet i svaret
+
     		
     		switch(choice) {
     			case 'A':	doA(); break;
@@ -53,20 +60,20 @@ public class UserInterface {
     // Definierar ett "uppdrag"
     private void doA() {
         Scanner scan = new Scanner(System.in);
-        String isbn, title,edition,price;
-
-        Book temp;
+        String isbn, title,edition,price, name;
+        
     	System.out.println("Please add the following information: ");
         System.out.println("Add ISBN: ");
         isbn = scan.nextLine();
         System.out.println("Add title: ");
         title = scan.nextLine();
+        System.out.println("Add author: ");
+        name = scan.nextLine();
         System.out.println("Add edition: ");
         edition = scan.nextLine();
         System.out.println("Add price: ");
         price = scan.nextLine();
-        temp = new Book(isbn,title,Integer.parseInt(edition),Double.parseDouble(price));
-        addBook(temp);
+        addBook(new Book(isbn,title,Integer.parseInt(edition),Double.parseDouble(price),name));
     }
     
     // Definierar ett annat "uppdrag"
@@ -84,10 +91,13 @@ public class UserInterface {
     }
     private void doE(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("Remove one of the following books: ");
-        getBooks();
-        System.out.print("by typing the nr: ");
-        removeBook((scan.nextInt())-1);
+        if(!books.isEmpty()){
+            System.out.println("Remove one of the following books: ");
+            getBooks();
+            System.out.print("by typing the nr: ");
+            removeBook((scan.nextInt())-1);
+        }else System.out.println("Empty list...");
+        
         
     }
     

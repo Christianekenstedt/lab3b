@@ -12,7 +12,14 @@ package laboration3b;
 public class Author {
     String author;//hej
     
-    public Author(){
-        
+    public Author(String name){
+        this.author = name;
+    }
+    
+    public void setAuthor(String name){
+        author = name;
+    }
+    public String getAuthor(){
+        return author;
     }
 }

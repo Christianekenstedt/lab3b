@@ -16,19 +16,24 @@ public class Book implements Comparable<Book>{
     private String title;
     private int edition;
     private double price;
+    private ArrayList<Author> authors;
     
-    public Book(String isbn, String title, int edition, double price ){
+    public Book(String isbn, String title, int edition, double price, String name ){
+        authors = new ArrayList<>();
         this.isbn = isbn;
         this.title = title;
         this.edition = edition;
         this.price = price;
+        addAuthor(name);
+        
+        
     }
     
     public void setISBN(String isbn){
         this.isbn = isbn;
     }
     
-    public void setTitleN(String title){
+    public void setTitle(String title){
         this.title = title;
     }
     
@@ -62,11 +67,10 @@ public class Book implements Comparable<Book>{
     }
     
     public void addAuthor(String author){
-
+        authors.add(new Author(author));
     }
     
     public ArrayList<Author> getAuthors(){
-        ArrayList<Author> authors = new ArrayList(); //hej
         return authors;
     }
     
