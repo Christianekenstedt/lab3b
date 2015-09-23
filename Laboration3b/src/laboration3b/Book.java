@@ -15,7 +15,11 @@ public class Book implements Comparable<Book>{
     private String isbn;
     private String title;
     private int edition;
-    private double price; 
+    private double price;
+    
+    public Book(){
+
+    }
     @Override
     public int compareTo(Book o) {
         
@@ -23,7 +27,7 @@ public class Book implements Comparable<Book>{
     }
     
     public void addAuthor(String author){
-        
+
     }
     
     public ArrayList<Author> getAuthors(){
