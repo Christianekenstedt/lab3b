@@ -27,7 +27,7 @@ public class Book implements Comparable<Book>{
     }
     
     public ArrayList<Author> getAuthors(){
-        ArrayList<Author> authors = new ArrayList();
+        ArrayList<Author> authors = new ArrayList(); //hej
         return authors;
     }
     
