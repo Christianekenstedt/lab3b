@@ -19,9 +19,27 @@ public class CollectionOfBooks {
     public void addBook(Book b){
         
     }
+    public void removeBook(Book b){
+        books.remove(b);
+    }
+    
+    public ArrayList<Book> getBooksByISBN(String isbn){
+        ArrayList<Book> temp = new ArrayList<>();
+        return temp;
+    }
     
     public ArrayList<Book> getBooksByTitle(String title){
         ArrayList<Book> temp = new ArrayList<>();
         return temp;
+    }
+    
+    public String getBooks(){
+        String info = "hello";
+        return info;
+    }
+    @Override
+    public String toString(){
+        String info = "hello";
+        return info;
     }
 }
