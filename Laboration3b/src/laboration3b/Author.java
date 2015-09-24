@@ -1,24 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboration3b;
 
 /**
- *
- * @author Chrille
+ * The class Author containing a name.
+ * @author Christian Ekenstedt
  */
 public class Author {
-    String author;//hej
-    
+    String author;
+    /**
+     * Constructor set the name of the author.
+     * @param name 
+     */
     public Author(String name){
         this.author = name;
     }
-    
+    /**
+     * Set the authors name.
+     * @param name 
+     */
     public void setAuthor(String name){
         author = name;
     }
+    /**
+     * Get the author name in a string
+     * @return a string with the author name.
+     */
     public String getAuthor(){
         return author;
     }
