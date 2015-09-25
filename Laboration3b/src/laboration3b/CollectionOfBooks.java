@@ -153,15 +153,15 @@ public class CollectionOfBooks implements Serializable {
             return null;
         } else {
             for (int i = 0; i < temp.size(); i++) {
-                info += "[" + (i + 1) + "] ISBN: " + temp.get(i).getISBN() + " Title: "
-                        + temp.get(i).getTitle() + " Author(s): ";
+                info += "[" + (i + 1) + "] ISBN: " + temp.get(i).getISBN() + "\tTitle: "
+                        + temp.get(i).getTitle() + "\tAuthor(s): ";
                 for (int j = 0; j < temp.get(i).getAuthors().size(); j++) {
                     info += " " + temp.get(i).getAuthors().get(j).getAuthor();
                     if (!(j == temp.get(i).getAuthors().size() - 1)) {
                         info += " &";
                     }
                 }
-                info += " Edition: " + temp.get(i).getEdition() + " Price: " + temp.get(i).getPrice() + "kr";
+                info += "\tEdition: " + temp.get(i).getEdition() + "\tPrice: " + temp.get(i).getPrice() + "kr";
                 info += "\n";
             }
             return info;
@@ -196,15 +196,15 @@ public class CollectionOfBooks implements Serializable {
             return null;
         } else {
             for (int i = 0; i < books.size(); i++) {
-                info += "[" + (i + 1) + "] ISBN: " + books.get(i).getISBN() + " Title: "
-                        + books.get(i).getTitle() + " Author(s): ";
+                info += "[" + (i + 1) + "] ISBN: " + books.get(i).getISBN() + "\tTitle: "
+                        + books.get(i).getTitle() + "\tAuthor(s): ";
                 for (int j = 0; j < books.get(i).getAuthors().size(); j++) {
                     info += " " + books.get(i).getAuthors().get(j).getAuthor();
                     if (!(j == books.get(i).getAuthors().size() - 1)) {
                         info += " &";
                     }
                 }
-                info += " Edition: " + books.get(i).getEdition() + " Price: " + books.get(i).getPrice() + "kr";
+                info += "\tEdition: " + books.get(i).getEdition() + "\tPrice: " + books.get(i).getPrice() + "kr";
                 info += "\n";
             }
             return info;
