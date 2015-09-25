@@ -12,12 +12,13 @@ import java.util.Collections;
 public class CollectionOfBooks implements Serializable {
 
     private ArrayList<Book> books;
-
+    private FileHandler f;
     /**
      * Constructor creates a new ArrayList<Book>
      */
-    public CollectionOfBooks() {
-        //read
+    public CollectionOfBooks() throws Exception{
+        //f = new FileHandler();
+        //books = f.read();
         books = new ArrayList<>();
 
     }
@@ -175,6 +176,9 @@ public class CollectionOfBooks implements Serializable {
         } else {
             return true;
         }
+    }
+    public void close() throws Exception{
+        f.write(books);
     }
 
     /**

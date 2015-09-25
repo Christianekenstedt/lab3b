@@ -11,12 +11,12 @@ public class UserInterface {
 
     private CollectionOfBooks books;
 
-    public UserInterface() {
+    public UserInterface() throws Exception{
         //read
         menu();
     }
 
-    public void menu() {
+    public void menu() throws Exception {
         books = new CollectionOfBooks();
         run();
     }
@@ -53,7 +53,7 @@ public class UserInterface {
         }
     }
 
-    private void run() {
+    private void run() throws Exception{
         Scanner scan = new Scanner(System.in);
         char choice = ' ';
         String answer;
@@ -85,6 +85,7 @@ public class UserInterface {
                     break;
                 case 'X':
                     System.out.println("Bye, bye!");
+                    //books.close();
                     break; // Here we do need to write to the file.
                 default:
                     System.out.println("Unknown command");
