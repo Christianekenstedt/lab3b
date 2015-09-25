@@ -17,9 +17,12 @@ public class CollectionOfBooks implements Serializable {
      * Constructor creates a new ArrayList<Book>
      */
     public CollectionOfBooks() throws Exception{
-        //f = new FileHandler();
-        //books = f.read();
-        books = new ArrayList<>();
+        f = new FileHandler();
+        books = f.read();
+        if(books == null){
+            books = new ArrayList<>();
+        }
+        
 
     }
 

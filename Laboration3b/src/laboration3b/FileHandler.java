@@ -20,14 +20,20 @@ public class FileHandler {
         try{
             FileInputStream fin = new FileInputStream("booklist.ser");
             ois = new ObjectInputStream(fin);
+            
             books = (ArrayList<Book>) ois.readObject();
+        }catch(FileNotFoundException e){
+            File file = new File("booklist.ser");
+            file.createNewFile();
+            return null;
         }
         finally{
             if(ois != null) ois.close();
+            
         }
         return books;
     }
-    public void write(ArrayList<Book> books) throws IOException{
+    public void write(ArrayList<Book> books) throws Exception{
         ObjectOutputStream oos = null;
         try{
             FileOutputStream fout = new FileOutputStream("booklist.ser");

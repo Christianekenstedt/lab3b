@@ -85,7 +85,7 @@ public class UserInterface {
                     break;
                 case 'X':
                     System.out.println("Bye, bye!");
-                    //books.close();
+                    books.close();
                     break; // Here we do need to write to the file.
                 default:
                     System.out.println("Unknown command");
