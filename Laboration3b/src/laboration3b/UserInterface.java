@@ -42,7 +42,7 @@ public class UserInterface {
     
     private void run(){
         Scanner scan = new Scanner(System.in);
-        char choice;
+        char choice = ' ';
     	String answer;
     	
     	do {

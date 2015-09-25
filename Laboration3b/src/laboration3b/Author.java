@@ -1,10 +1,12 @@
 package laboration3b;
 
+import java.io.Serializable;
+
 /**
  * The class Author containing a name.
  * @author Christian Ekenstedt
  */
-public class Author {
+public class Author implements Serializable {
     String author;
     /**
      * Constructor set the name of the author.

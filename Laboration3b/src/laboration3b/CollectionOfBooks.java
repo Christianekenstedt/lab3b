@@ -1,11 +1,12 @@
 package laboration3b;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 /**
  *  This is a class CollectionOfBooks.
  * @author Christian Ekenstedt
  */
-public class CollectionOfBooks {
+public class CollectionOfBooks implements Serializable {
     private ArrayList<Book> books;
     /**
      * Constructor creates a new ArrayList<Book>

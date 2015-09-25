@@ -1,11 +1,12 @@
 package laboration3b;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Christian Ekenstedt
  */
-public class Book implements Comparable<Book>{
+public class Book implements Comparable<Book>, Serializable{
     private String isbn;
     private String title;
     private int edition;
