@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class UserInterface {
 
     private CollectionOfBooks books;
+    private boolean runi;
 
     public UserInterface() throws Exception{
         //read
@@ -18,6 +19,7 @@ public class UserInterface {
 
     public void menu() throws Exception {
         books = new CollectionOfBooks();
+        runi = true;
         run();
     }
 
@@ -57,8 +59,10 @@ public class UserInterface {
         Scanner scan = new Scanner(System.in);
         char choice = ' ';
         String answer;
+        
 
-        do {
+        while(runi){
+            System.out.println(runi);
             printMenu();
             answer = scan.nextLine();
             answer = answer.toUpperCase();
@@ -86,19 +90,22 @@ public class UserInterface {
                 case 'X':
                     System.out.println("Bye, bye!");
                     books.close();
-                    break; // Here we do need to write to the file.
+                    runi = false;
+                    System.out.println("nu blev den satt till " + runi);
+                    break;
                 default:
                     System.out.println("Unknown command");
+                    break;
             }
-
-        } while (choice != 'X');
+        }
+        System.out.println("vad händer " + runi);
     }
 
     // Definierar ett "uppdrag"
 
     private void doA() {
         Scanner scan = new Scanner(System.in);
-        String isbn, title, edition, price, name;
+        String isbn, title, edition, price;
         ArrayList<String> names = new ArrayList<>();
         String temp = "yes";
         System.out.println("Please add the following information: ");
@@ -108,7 +115,7 @@ public class UserInterface {
         title = scan.nextLine();
         System.out.println("Add author: ");
         names.add(scan.nextLine());
-        while (temp != "no") {
+        while (!"no".equals(temp)) {
             System.out.print("Are there anymore authors? (yes/no): ");
             temp = scan.nextLine();
             if (temp.contains("yes") || temp.contains("Yes")) {

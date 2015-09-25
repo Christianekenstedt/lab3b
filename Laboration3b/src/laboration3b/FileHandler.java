@@ -12,8 +12,9 @@ import java.util.ArrayList;
  *
  * @author Christian
  */
+@SuppressWarnings("unchecked")
 public class FileHandler {
-
+    
     public ArrayList<Book> read() throws Exception {
 
         ObjectInputStream ois = null;
@@ -36,7 +37,7 @@ public class FileHandler {
         }
         return books;
     }
-
+    
     public void write(ArrayList<Book> books) throws Exception {
         ObjectOutputStream oos = null;
         try {
