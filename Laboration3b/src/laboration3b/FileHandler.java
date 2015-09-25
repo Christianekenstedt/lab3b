@@ -9,6 +9,6 @@ package laboration3b;
  *
  * @author Christian
  */
-public class Write {
+public class FileHandler {
     
 }
