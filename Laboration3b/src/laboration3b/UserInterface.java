@@ -14,7 +14,8 @@ public class UserInterface {
 
     public UserInterface() throws Exception{
         //read
-        menu();
+       // menu();
+        
     }
 
     public void menu() throws Exception {
@@ -60,9 +61,7 @@ public class UserInterface {
         char choice = ' ';
         String answer;
         
-
-        while(runi){
-            System.out.println(runi);
+        while(choice != 'X'){
             printMenu();
             answer = scan.nextLine();
             answer = answer.toUpperCase();
@@ -90,15 +89,13 @@ public class UserInterface {
                 case 'X':
                     System.out.println("Bye, bye!");
                     books.close();
-                    runi = false;
-                    System.out.println("nu blev den satt till " + runi);
                     break;
                 default:
                     System.out.println("Unknown command");
                     break;
             }
+            
         }
-        System.out.println("vad händer " + runi);
     }
 
     // Definierar ett "uppdrag"
