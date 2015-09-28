@@ -40,10 +40,13 @@ public class UserInterface {
     }
 
     public void removeBook(int index) {
-        if (!books.removeBook(index)) {
-            // We have to check if the index exists!
-            System.out.println("Can't find book!");
-        }
+        if(index != -1){
+            if(!books.removeBook(index)) {
+                // We have to check if the index exists!
+                System.out.println("Can't find book!");
+            }
+            
+        }else System.out.println("Exiting");
     }
 
     public void getBooks() {
@@ -162,7 +165,7 @@ public class UserInterface {
         if (!books.isEmpty()) {
             System.out.println("Remove one of the following books: ");
             getBooks();
-            System.out.print("by typing the nr: ");
+            System.out.print("by typing the nr (or 0 to go back): ");
             removeBook((scan.nextInt()) - 1);
         } else {
             System.out.println("Empty list...");
