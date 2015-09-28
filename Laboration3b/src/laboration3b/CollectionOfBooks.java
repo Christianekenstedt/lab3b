@@ -196,7 +196,7 @@ public class CollectionOfBooks implements Serializable {
             return null;
         } else {
             for (int i = 0; i < books.size(); i++) {
-                info += "[" + (i + 1) + "] ISBN: " + books.get(i).getISBN() + "\tTitle: "
+                info += "[" + (i + 1) + "]\tISBN: " + books.get(i).getISBN() + "\tTitle: "
                         + books.get(i).getTitle() + "\tAuthor(s): ";
                 for (int j = 0; j < books.get(i).getAuthors().size(); j++) {
                     info += " " + books.get(i).getAuthors().get(j).getAuthor();
