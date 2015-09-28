@@ -74,8 +74,8 @@ public class CollectionOfBooks implements Serializable {
                 temp.add(books.get(i));
             }
         }
-        for (int i = 0; i < books.size(); i++) {
-            books.get(i).setSortingBy("isbn");
+        for (Book book : books) {
+            book.setSortingBy("isbn");
         }
         Collections.sort(temp);
         return temp;
@@ -98,8 +98,8 @@ public class CollectionOfBooks implements Serializable {
                 temp.add(books.get(i));
             }
         }
-        for (int i = 0; i < books.size(); i++) {
-            books.get(i).setSortingBy("title");
+        for (Book book : books) {
+            book.setSortingBy("title");
         }
         Collections.sort(temp);
         return temp;
@@ -124,8 +124,8 @@ public class CollectionOfBooks implements Serializable {
                 }
             }
         }
-        for (int i = 0; i < books.size(); i++) {
-            books.get(i).setSortingBy("author");
+        for (Book book : books) {
+            book.setSortingBy("author");
         }
         Collections.sort(temp);
         return temp;
