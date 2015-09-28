@@ -75,9 +75,6 @@ public class CollectionOfBooks implements Serializable {
                 temp.add(books.get(i));
             }
         }
-        for (Book book : books) {
-            book.setSortingBy("isbn");
-        }
         Collections.sort(temp);
         return temp;
     }
@@ -98,9 +95,6 @@ public class CollectionOfBooks implements Serializable {
             if (books.get(i).getTitle().contains(title)) {
                 temp.add(books.get(i));
             }
-        }
-        for (Book book : books) {
-            book.setSortingBy("title");
         }
         Collections.sort(temp);
         return temp;
@@ -124,9 +118,6 @@ public class CollectionOfBooks implements Serializable {
                     temp.add(books.get(i));
                 }
             }
-        }
-        for (Book book : books) {
-            book.setSortingBy("author");
         }
         Collections.sort(temp);
         return temp;

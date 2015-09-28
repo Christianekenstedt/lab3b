@@ -17,7 +17,6 @@ public class Book implements Comparable<Book>, Serializable {
     private int edition;
     private double price;
     private ArrayList<Author> authors;
-    private String sortingBy;
 
     /**
      * Constructor set all the attributes.
@@ -36,17 +35,7 @@ public class Book implements Comparable<Book>, Serializable {
         this.edition = edition;
         this.price = price;
         addAuthor(names);
-        sortingBy = "title"; // By default title sorting.
 
-    }
-
-    /**
-     * Sets the sortingBy by a sortingBy parameter.
-     *
-     * @param sortingBy
-     */
-    public void setSortingBy(String sortingBy) {
-        this.sortingBy = sortingBy;
     }
 
     /**
@@ -158,23 +147,7 @@ public class Book implements Comparable<Book>, Serializable {
      */
     @Override
     public int compareTo(Book b) {
-        int res = 0;
-        switch (sortingBy) {
-            case "title":
-                res = this.title.compareTo(b.getTitle());
-                break;
-            case "isbn":
-                res = this.isbn.compareTo(b.getISBN());
-                break;
-            case "author":
-                for (int i = 0; i < authors.size(); i++) {
-                    res = this.authors.get(i).getAuthor().compareTo(b.getAuthors().get(i).getAuthor());
-                }
-
-            default:
-                break;
-        }
-        return res; // RÄTT ENS!??!?!?
+        return this.title.compareTo(b.getTitle());
     }
 
     /**
