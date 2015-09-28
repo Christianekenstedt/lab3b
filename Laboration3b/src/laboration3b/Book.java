@@ -4,8 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
+ * The class Book represents a book object. A book can contain an isbn number, a
+ * title, a edition number, a price and one or more Author objects.
  *
- * @author Christian Ekenstedt
+ *
+ * @author Christian Ekenstedt & Joachim Zetterman
  */
 public class Book implements Comparable<Book>, Serializable {
 
@@ -26,6 +29,7 @@ public class Book implements Comparable<Book>, Serializable {
      * @param names, names to be set.
      */
     public Book(String isbn, String title, int edition, double price, ArrayList<String> names) {
+
         authors = new ArrayList<>();
         this.isbn = isbn;
         this.title = title;
@@ -36,10 +40,10 @@ public class Book implements Comparable<Book>, Serializable {
 
     }
     /*         _____ _____ ______  _____ _____   __  __      _   _               _     
-         /\   / ____/ ____|  ____|/ ____/ ____| |  \/  |    | | | |             | |    
-        /  \ | |   | |    | |__  | (___| (___   | \  / | ___| |_| |__   ___   __| |___ 
-       / /\ \| |   | |    |  __|  \___ \\___ \  | |\/| |/ _ \ __| '_ \ / _ \ / _` / __|
-      / ____ \ |___| |____| |____ ____) |___) | | |  | |  __/ |_| | | | (_) | (_| \__ \
+     /\   / ____/ ____|  ____|/ ____/ ____| |  \/  |    | | | |             | |    
+     /  \ | |   | |    | |__  | (___| (___   | \  / | ___| |_| |__   ___   __| |___ 
+     / /\ \| |   | |    |  __|  \___ \\___ \  | |\/| |/ _ \ __| '_ \ / _ \ / _` / __|
+     / ____ \ |___| |____| |____ ____) |___) | | |  | |  __/ |_| | | | (_) | (_| \__ \
      /_/    \_\_____\_____|______|_____/_____/  |_|  |_|\___|\__|_| |_|\___/ \__,_|___/
      */
 
@@ -159,7 +163,6 @@ public class Book implements Comparable<Book>, Serializable {
      * @param b the other book to be compared with.
      * @return
      */
-    
     @Override
     public int compareTo(Book b) {
         int res = 0;

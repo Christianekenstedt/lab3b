@@ -4,12 +4,23 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
+ * The class FileHandler contains read and write methods. The class read and
+ * writes to a specific file called "booklist.ser", if the file is not found it
+ * will create a new file with that specific name.
  *
- * @author Christian
+ * @author Christian Ekenstedt & Joachim Zetterman
  */
 @SuppressWarnings("unchecked")
 public class FileHandler {
-    
+
+    /**
+     * The method read reads the file "booklist.ser" and deserializes the data.
+     * If the file is not found, it create a new .ser file and returns null.
+     *
+     * @return books, a reference to a temporary list of the type Book. Returns
+     * null if the file is not found.
+     * @throws Exception
+     */
     public ArrayList<Book> read() throws Exception {
 
         ObjectInputStream ois = null;
@@ -32,7 +43,13 @@ public class FileHandler {
         }
         return books;
     }
-    
+
+    /**
+     * The method write serializes data to the file booklist.ser
+     *
+     * @param books , is an ArrayList of the type Book.
+     * @throws Exception
+     */
     public void write(ArrayList<Book> books) throws Exception {
         ObjectOutputStream oos = null;
         try {

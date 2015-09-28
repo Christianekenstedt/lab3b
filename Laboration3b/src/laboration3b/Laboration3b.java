@@ -6,16 +6,18 @@
 package laboration3b;
 
 /**
+ * This class is the main method for Laboration3b. It starts the UI by creating
+ * a UserInterface object.
  *
- * @author Chrille
+ * @author Christian Ekenstedt & Joachim Zetterman
  */
 public class Laboration3b {
 
     /**
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        UserInterface start = new UserInterface();
-        start.menu();
+        UserInterface ui = new UserInterface();
     }
 }

@@ -5,24 +5,25 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * This is a class CollectionOfBooks.
+ * The class CollectionOfBooks represents a collection of book objects. This
+ * class also read and writes the collection of books to an .ser file.
  *
- * @author Christian Ekenstedt
+ * @author Christian Ekenstedt & Joachim Zetterman
  */
 public class CollectionOfBooks implements Serializable {
 
     private ArrayList<Book> books;
     private FileHandler f;
+
     /**
      * Constructor creates a new ArrayList<Book>
      */
-    public CollectionOfBooks() throws Exception{
+    public CollectionOfBooks() throws Exception {
         f = new FileHandler();
         books = f.read();
-        if(books == null){
+        if (books == null) {
             books = new ArrayList<>();
         }
-        
 
     }
 
@@ -180,7 +181,8 @@ public class CollectionOfBooks implements Serializable {
             return true;
         }
     }
-    public void close() throws Exception{
+
+    public void close() throws Exception {
         f.write(books);
     }
 

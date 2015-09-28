@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * The class Author containing a name.
  *
- * @author Christian Ekenstedt
+ * @author Christian Ekenstedt & Joachim Zetterman
  */
 public class Author implements Serializable {
 
