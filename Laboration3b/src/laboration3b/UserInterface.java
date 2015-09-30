@@ -39,7 +39,11 @@ public class UserInterface {
      * @param title
      */
     public void getBooksByTitle(String title) {
-        System.out.println(books.getBooks(books.getBooksByTitle(title)));
+        String temp = books.getBooks(books.getBooksByTitle(title));
+        if (temp != null){
+            System.out.println(temp);
+        }else System.out.println("Nothing...");
+        
     }
 
     /**
@@ -48,7 +52,10 @@ public class UserInterface {
      * @param isbn
      */
     public void getBooksByISBN(String isbn) {
-        System.out.println(books.getBooks(books.getBooksByISBN(isbn)));
+        String temp = books.getBooks(books.getBooksByISBN(isbn));
+        if (temp != null){
+            System.out.println(temp);
+        }else System.out.println("Nothing...");
     }
 
     /**
@@ -58,7 +65,10 @@ public class UserInterface {
      * @param author
      */
     public void getBooksByAuthor(String author) {
-        System.out.println(books.getBooks(books.getBooksByAuthor(author)));
+        String temp = books.getBooks(books.getBooksByAuthor(author));
+        if (temp != null){
+            System.out.println(temp);
+        }else System.out.println("Nothing...");
     }
 
     /**
