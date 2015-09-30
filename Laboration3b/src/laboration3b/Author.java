@@ -9,7 +9,7 @@ import java.io.Serializable;
  */
 public class Author implements Serializable {
 
-    String author;
+    private String author;
 
     /**
      * Constructor set the name of the author.
