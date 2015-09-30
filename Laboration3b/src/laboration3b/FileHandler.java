@@ -32,8 +32,6 @@ public class FileHandler {
             books = (ArrayList<Book>) ois.readObject();
         } catch (FileNotFoundException e) {
             System.out.println("Cannot find file, creating new...");
-            File file = new File("booklist.ser");
-            file.createNewFile();
             return null;
         } finally {
             if (ois != null) {
